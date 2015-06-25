@@ -13,6 +13,6 @@
 + (instancetype) sharedDataStore;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
+@property (nonatomic, strong) NSArray *savedObjects;
 - (void)saveContext;
 @end
