@@ -45,9 +45,13 @@
 
     
     
-    self.messageObjects = @[message1, message2, message3];
+//    self.messageObjects = @[message1, message2, message3];
     
     [dataManager saveContext];
+    
+    NSFetchRequest *messageFetch = [[NSFetchRequest alloc] initWithEntityName:@"Message"];
+    self.messageObjects = [dataManager.managedObjectContext executeFetchRequest:messageFetch error:nil];
+    
     
     
     // Uncomment the following line to preserve selection between presentations.
